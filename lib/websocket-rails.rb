@@ -11,6 +11,7 @@ module WebsocketRails
 
     def config
       @config ||= Configuration.new
+      puts @config
     end
 
     def synchronize?
@@ -18,6 +19,7 @@ module WebsocketRails
     end
 
     def standalone?
+      puts config.standalone
       config.standalone == true
     end
 
