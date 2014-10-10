@@ -10,8 +10,8 @@ module WebsocketRails
     end
 
     def config
-      @config ||= Configuration.new
       puts @config
+      @config ||= Configuration.new
     end
 
     def synchronize?
