@@ -10,7 +10,6 @@ module WebsocketRails
     end
 
     def config
-      puts @config.inspect
       @config ||= Configuration.new
     end
 
@@ -19,9 +18,6 @@ module WebsocketRails
     end
 
     def standalone?
-      puts config.redis_options
-      puts config.synchronize
-      puts config.standalone
       config.standalone == true
     end
 

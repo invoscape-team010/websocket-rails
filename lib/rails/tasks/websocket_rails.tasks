@@ -1,6 +1,6 @@
 namespace :websocket_rails do
   desc 'Start the WebsocketRails standalone server.'
-  task :start_server => :environment do
+  task :start_server do
     require "thin"
     load "#{Rails.root}/config/initializers/websocket_rails.rb"
     load "#{Rails.root}/config/events.rb"
@@ -21,7 +21,7 @@ namespace :websocket_rails do
   end
 
   desc 'Stop the WebsocketRails standalone server.'
-  task :stop_server => :environment do
+  task :stop_server do
     require "thin"
     load "#{Rails.root}/config/initializers/websocket_rails.rb"
     load "#{Rails.root}/config/events.rb"
@@ -35,8 +35,6 @@ namespace :websocket_rails do
 end
 
 def warn_if_standalone_not_enabled!
-  puts WebsocketRails.config.standalone
-  puts WebsocketRails.standalone?
   return if WebsocketRails.standalone?
   puts "Fail!"
   puts "You must enable standalone mode in your websocket_rails.rb initializer to use the standalone server."

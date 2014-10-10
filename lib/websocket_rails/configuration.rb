@@ -119,7 +119,7 @@ module WebsocketRails
     end
 
     def standalone
-      @standalone ||= false
+      @standalone ||= true
     end
 
     def standalone=(standalone)
