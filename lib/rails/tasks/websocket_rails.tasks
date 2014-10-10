@@ -35,6 +35,8 @@ namespace :websocket_rails do
 end
 
 def warn_if_standalone_not_enabled!
+  puts WebsocketRails.config.standalone
+  puts WebsocketRails.standalone
   puts WebsocketRails.standalone?
   return if WebsocketRails.standalone?
   puts "Fail!"
