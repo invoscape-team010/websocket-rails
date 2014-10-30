@@ -99,7 +99,7 @@ module WebsocketRails
     end
 
     def synchronize
-      @synchronize ||= false
+      @synchronize ||= true
     end
 
     def synchronize=(synchronize)
@@ -127,7 +127,7 @@ module WebsocketRails
     end
 
     def standalone_port
-      @standalone_port ||= '3001'
+      @standalone_port ||= ENV['PORT']
     end
 
     def standalone_port=(port)
